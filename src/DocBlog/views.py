@@ -1,6 +1,11 @@
-
+from datetime import datetime
 from django.shortcuts import render
 
 
 def index(request):
-    return render(request, "index.html")
+
+    date = datetime.today()
+    print(date)
+    print(type(date))
+
+    return render(request, "docBlog/index.html", context={"date": date})
